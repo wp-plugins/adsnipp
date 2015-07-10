@@ -1,10 +1,10 @@
 === AdSnipp ===
-Contributors: Adsnipp
+Contributors: AdSnipp
 Donate link: 
-Tags: ads, banner, commercial, admin, advertise, adrotator, plugin, random, rotator, ad, advertising, advertisement, block, blocks, advertiser, publisher, adsense, geo, geolocation, geotarget, chitika, clickbank, broadstreet, banner manager,advert manager, campaign manager, export, import, telize, maxmind, referrer, email, menu, statistics, stats, report, advert, adverts, popular, best, great, 2014, geoselect, geobytes, schedules, schedule, monetize, header, widget, javascript, jquery, tracking, clicks, impressions, rotate, zone, zones, sidebar, footer, content, posts, pages, 2015
+Tags: ads, ad, adsense, display, banner, advertisements, adverts, advert, monetization
 Requires at least: 3.8, PHP5.3
 Tested up to: 4.2.2
-Stable tag: 3.11.7
+Stable tag: trunk
  
 AdSnipp for Wordpress. Easy way to manage ad snippets.
 

@@ -2,9 +2,9 @@
 /*
 Plugin Name: AdSnipp
 Description: AdSnipp for Wordpress. Easy way to manage ad snippets.
-Version: 1.0 2015-07-03 12:00
-Author: Sweet Captcha
-Author URI: http://www.sweetcaptcha.com
+Version: 3.2
+Author: AdSnipp
+Author URI: http://www.adsnipp.com
 License: GNU GPL2
 */
 
