@@ -396,7 +396,7 @@ function adsnipp_ad_form_page_handler()
         </div>
     </form>
 	<p class="submit">
-		<?php _e('*By pressing "Save" I confirm I have read and accepted AdSnipp', 'adsnipp')?> <a href="http://sweetcaptcha.com/terms" target="_blank" style="font-weight: bold"><?php _e('terms of use', 'adsnipp')?></a> 
+		<?php _e('*By pressing "Save" I confirm I have read and accepted AdSnipp', 'adsnipp')?> <a href="http://adsnipp.com/index.php/terms/" target="_blank" style="font-weight: bold"><?php _e('terms & conditions of use', 'adsnipp')?></a> 
 	</p>
 	<p>For support, mail us at: <a href="mailto:support@adsnipp.com">support@adsnipp.com</a></p>
 </div>

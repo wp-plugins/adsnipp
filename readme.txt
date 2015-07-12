@@ -49,7 +49,11 @@ With AdSnipp you just need to copy & paste you new code, and that's it your ads 
 1. Upload the `AdSnipp` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin using the 'Plugins' menu in your WordPress admin panel.
 3. You can adjust the necessary settings using your WordPress admin panel in "AdSnipp" menu.
-4. Under "My Ads" --> "Add new" create and configure your new ad, choose Status "on" to activate and press "save" .
+4. Under "My Ads" --> "Add new" create and configure your new ad, choose Status "on" to activate and press "save".
+
+= I have a problem with setting up the AdSnipp, what to do? = 
+
+Drop us a mail at support@adsnipp.com 
 
 == Screenshots ==
 
