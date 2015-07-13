@@ -63,5 +63,8 @@ Drop us a mail at support@adsnipp.com
 
 == Changelog ==
 
+= 3.2.2 =
+* bug - some links in the settings page fixed
+
 = V3.2.1 - 06.07.2015 =
 * Update : first time we publish.(good luck!)
