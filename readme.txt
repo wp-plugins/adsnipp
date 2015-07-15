@@ -15,8 +15,7 @@ AdSnipp for Wordpress. Easy way to manage ad snippets.
 **AdSnipp Ads** - now you can easily place Ad network advertising anywhere on your site from your dashboard. 
 No need for technical background.
 
-https://youtu.be/C1GsNyd8yrk
-
+https://www.youtube.com/watch?v=C1GsNyd8yrk
 
 Create your own adverts with basic JavaScript snippets or use adverts from your favorite Ad Networks such as Bing, Yahoo, Google AdSense or other similar services.
 Manage your advertising campaigns with ease, right from your dashboard. Check up on stats.
