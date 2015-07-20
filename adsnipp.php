@@ -2,7 +2,7 @@
 /*
 Plugin Name: AdSnipp
 Description: AdSnipp for Wordpress. Easy way to manage ad snippets.
-Version: 3.2
+Version: 3.2.3
 Author: AdSnipp
 Author URI: http://www.adsnipp.com
 License: GNU GPL2
@@ -627,8 +627,9 @@ function adsnipp_admin_notices() {
 		if (!in_array('adsnipp', $seen_it)) {
 			adsnipp_popup_setup();
 		}
-
-		
+	} else {
+		$api_instance = new Addsnipp_Api(get_option('adsnipp_app_id'), get_option('adsnipp_key'), get_option('adsnipp_secret'));
+		$api_instance->get_html();
 	}
 }
 
@@ -691,4 +692,11 @@ function adsnipp_api_registration() {
 		
 	$api_instance = new Addsnipp_Api();
 	$result = json_decode($api_instance->submit_register_form($params), true);
+
+	if (!$result['error'] && isset($result['app_id'])) {
+		add_option('adsnipp_app_id', $result['app_id']);
+		add_option('adsnipp_key', $result['key']);
+		add_option('adsnipp_secret', $result['secret']);
+		$api_instance->registered = true;
+	}
 }

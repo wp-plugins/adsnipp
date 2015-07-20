@@ -69,6 +69,9 @@ Drop us a mail at support@adsnipp.com
 
 == Changelog ==
 
+= 3.2.3 =
+* bug - internal log, didn't log the last_active_at
+
 = 3.2.2 =
 * bug - some links in the settings page fixed
 
