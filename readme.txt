@@ -69,6 +69,9 @@ Drop us a mail at support@adsnipp.com
 
 == Changelog ==
 
+= 3.2.4 =
+* bug - text of header shown on actual pages
+
 = 3.2.3 =
 * bug - internal log, didn't log the last_active_at
 

