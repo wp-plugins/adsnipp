@@ -3,7 +3,7 @@ Contributors: AdSnipp
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VFNAY8TTGR9PE
 Tags: ads, banner, commercial, admin, advertise, adrotator, plugin, random, rotator, ad, advertising, advertisement, block, blocks, advertiser, publisher, adsense, geo, geolocation, geotarget, chitika, clickbank, broadstreet, banner manager,advert manager, campaign manager, export, import, telize, maxmind, referrer, email, menu, statistics, stats, report, advert, adverts, popular, best, great, 2014, geoselect, geobytes, schedules, schedule, monetize, header, widget, javascript, jquery, tracking, clicks, impressions, rotate, zone, zones, sidebar, footer, content, posts, pages, 2015
 Requires at least: 3.8, PHP5.3
-Tested up to: 4.2.2
+Tested up to: 4.2.3
 Stable tag: trunk
 License: GPLv2 or later
  
