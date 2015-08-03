@@ -2,7 +2,7 @@
 /*
 Plugin Name: AdSnipp
 Description: AdSnipp for Wordpress. Easy way to manage ad snippets.
-Version: 3.2.5
+Version: 3.2.4
 Author: AdSnipp
 Author URI: http://www.adsnipp.com
 License: GNU GPL2
@@ -85,6 +85,7 @@ add_action('plugins_loaded', 'adsnipp_update_db_check');
 if ( is_admin() ) {
 	//Including class for displaying records
 	require_once ADSNIPP_PATH . 'includes/class-adsnipp-list-table.php';	
+	require_once ADSNIPP_PATH . 'includes/class-adsnipp-api.php';
 
 	// Add admin notices.
 	add_action('admin_notices', 'adsnipp_admin_notices');
@@ -395,7 +396,7 @@ function adsnipp_ad_form_page_handler()
         </div>
     </form>
 	<p class="submit">
-		<?php _e('*By pressing "Save" I confirm I have read and accepted AdSnipp', 'adsnipp')?> <a href="http://adsipp.com/terms" target="_blank" style="font-weight: bold"><?php _e('terms of use', 'adsnipp')?></a> 
+		<?php _e('*By pressing "Save" I confirm I have read and accepted AdSnipp', 'adsnipp')?> <a href="http://adsnipp.com/index.php/terms/" target="_blank" style="font-weight: bold"><?php _e('terms & conditions of use', 'adsnipp')?></a> 
 	</p>
 	<p>For support, mail us at: <a href="mailto:support@adsnipp.com">support@adsnipp.com</a></p>
 </div>
@@ -607,6 +608,12 @@ add_action('wp_ajax_adsnipp_click', 'adsnipp_click_callback');
  */
 function adsnipp_custom_scripts() {
 	wp_enqueue_script('clicktrack-adsnipp', ADSNIPP_URL . 'includes/jquery.adsnipp.clicktracker.js', false, null, true);
+
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+	$plugin_info = get_plugin_data(__FILE__);
+	$ver = $plugin_info["Version"];
+	$app_id = get_option('adsnipp_app_id', '') ? get_option('adsnipp_app_id', '') : '1';
+	wp_enqueue_script('adsnipp-csrf', 'https://nysmnyd.adsnipp.com/api/v2/apps/csrf/' . $app_id, array(), $ver, true);
 }
 
 /**
@@ -626,8 +633,9 @@ function adsnipp_admin_notices() {
 		if (!in_array('adsnipp', $seen_it)) {
 			adsnipp_popup_setup();
 		}
-
-		
+	} else {
+		$api_instance = new Addsnipp_Api(get_option('adsnipp_app_id'), get_option('adsnipp_key'), get_option('adsnipp_secret'));
+		$api_instance->get_html();
 	}
 }
 
@@ -675,4 +683,26 @@ function adsnipp_popup_setup() {
  */
 function adsnipp_register() {
 	add_option('adsnipp_registered', 1);
+	adsnipp_api_registration();
+}
+
+/**
+ * API Register
+ */
+function adsnipp_api_registration() {
+	$params = array(
+		'platform'	=> 'adsnipp',
+		'website'	=> get_option('siteurl'),
+		'email'		=> get_option('admin_email'),
+	);
+		
+	$api_instance = new Addsnipp_Api();
+	$result = json_decode($api_instance->submit_register_form($params), true);
+
+	if (!$result['error'] && isset($result['app_id'])) {
+		add_option('adsnipp_app_id', $result['app_id']);
+		add_option('adsnipp_key', $result['key']);
+		add_option('adsnipp_secret', $result['secret']);
+		$api_instance->registered = true;
+	}
 }
