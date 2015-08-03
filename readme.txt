@@ -69,6 +69,9 @@ Drop us a mail at support@adsnipp.com
 
 == Changelog ==
 
+= 3.2.5 =
+* bug - ads are shown only in header with some js scripts,solved
+
 = 3.2.4 =
 * bug - text of header shown on actual pages
 
